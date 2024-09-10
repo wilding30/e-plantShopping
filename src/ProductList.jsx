@@ -5,7 +5,7 @@ import { addItem } from './CartSlice';
 function ProductList() {
     const [showCart, setShowCart] = useState(false); 
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
-    const [addedToCard, setAddedToCard] = useState({});
+    const [addedToCart, setAddedToCart] = useState({});
     const plantsArray = [
         {
             category: "Air Purifying Plants",
@@ -248,13 +248,13 @@ const handlePlantsClick = (e) => {
     setShowCart(false);
   };
 
-    const handleAddToCart = (product) => {
-        dispatchEvent(addItem(product));
-        setAddedToCard((prevState) => ({
-            ...prevState,
-            [product.name]: true, // Set the product name as key and value true to indicate added to the cart
-        }))
-    }
+  const handleAddToCart = (product) => {
+    dispatch(addItem(product));
+    setAddedToCart((prevState) => ({
+       ...prevState,
+       [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
+     }));
+  };
     return (
         <div>
              <div className="navbar" style={styleObj}>
@@ -287,7 +287,7 @@ const handlePlantsClick = (e) => {
                                 <div className="produc-title">{plant.name}</div>
                                 <div className="produc-title">{plant.description}</div>
                                 <div className="produc-title">{plant.cost}</div>
-                                <button className="product-button" onClick={() => handleAddToCart(plat)}>Add to Cart</button>
+                                <button className="product-button" onClick={() => handleAddToCart(plant)}>Add to Cart</button>
                             </div>
                         ))}
                     </div>
