@@ -93,15 +93,13 @@ const CartItem = ({ setAddedToCart, onContinueShopping }) => {
         <button
           className='get-started-button'
           onClick={(e) => handleContinueShopping(e)}
-        >
-          Continue Shopping
+        > Continue Shopping
         </button>
         <br />
         <button
           onClick={(e) => handleCheckoutShopping(e)}
           className='get-started-button1'
-        >
-          Checkout
+        > Checkout
         </button>
       </div>
     </div>

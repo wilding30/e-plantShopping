@@ -6,10 +6,7 @@ import { addItem } from './CartSlice';
 
 function ProductList() {
   const [showCart, setShowCart] = useState(false);
-
-  // eslint-disable-next-line no-unused-vars
-  const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
-  // eslint-disable-next-line no-unused-vars
+  const [showPlants, setShowPlants] = useState(false);
   const [addedToCart, setAddedToCart] = useState({});
   const cart = useSelector((state) => state.cart.items);
 
@@ -380,8 +377,7 @@ function ProductList() {
                       <p>{plant.description}</p>
                     </div>
 
-                    <button
-                      className={` ${
+                    <button className={` ${
                         addedToCart[plant.name]
                           ? 'added-to-cart'
                           : 'product-button'
